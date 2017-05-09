@@ -2,7 +2,7 @@
 <package>
   <name>map_generator</name>
   <version>1.0.0</version>
-  <description>Generates 2d maps for ros::OcupancyGrid </description>
+  <description>Generates 2d occupancy grid maps.</description>
 
   <maintainer email="vladimirrim@gmail.com">Vladimir Egorov</maintainer>
 
