@@ -1,4 +1,4 @@
-# mapGenerator
+# map_generator
 
 This program generates random 2d occupancy grid maps.
 
