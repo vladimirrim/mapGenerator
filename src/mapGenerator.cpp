@@ -8,7 +8,7 @@ using namespace mapGen;
 mapGenerator::mapGenerator(size_t width, size_t height) : map_width_(width / 10),
                                                           map_height_(height / 10),
                                                           threshold_(min(width, height) / 10),
-                                                          real_map_(width, vector<int8_t>(height, 0)),
+                                                          real_map_(width, vector<int8_t>(height, 1)),
                                                           algo_map_(map_width_, vector<cell>(map_height_)),
                                                           used_(map_width_, vector<bool>(map_height_, 0)),
                                                           mt(rd()) {}
@@ -16,14 +16,6 @@ mapGenerator::mapGenerator(size_t width, size_t height) : map_width_(width / 10)
 vector <int8_t> mapGenerator::generate_2d_map() {
     int x = mt() % map_width_;
     int y = mt() % map_height_;
-
-    for (int i = 0; i < 10 * map_width_; i++)
-        for (int j = 0; j < 10 * map_height_; j++)
-            real_map_[i][j] = 1;
-
-    for (int i = 0; i < map_width_; i++)
-        for (int j = 0; j < map_height_; j++)
-            used_[i][j] = 0;
 
     carve_passage(x, y);
 
